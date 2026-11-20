@@ -15,9 +15,8 @@ Install these tools once in order (standardized on **Java 25**):
 | **Git for Windows** | Clones the repository from GitHub and pulls/pushes updates | [Git for Windows](https://git-scm.com/download/win) |
 | **Eclipse Temurin JDK 25 (64-bit)** | Provides Java (`java`) and the Java compiler (`javac`) | [Eclipse Temurin JDK 25](https://adoptium.net/temurin/releases/?version=25) |
 | **Apache Maven** | Builds the project and resolves JavaFX dependencies from `pom.xml` | [Apache Maven](https://maven.apache.org/install.html) |
-| **Google Antigravity** | Editor used to open and work on the project | [Google Antigravity](https://antigravity.google/) |
 
-> **Important:** Use **JDK 25** to match the rest of the team. Do **not** install the JavaFX SDK separately — Maven automatically resolves JavaFX dependencies declared in `pom.xml`.
+> **Important:** Use **JDK 25** to match the rest of the team. Do **not** install the JavaFX SDK separately — Maven automatically resolves JavaFX dependencies declared in `pom.xml`. You can use any Java-compatible IDE or code editor you prefer.
 
 ---
 
@@ -27,7 +26,7 @@ Install these tools once in order (standardized on **Java 25**):
 1. Open the [Git for Windows download page](https://git-scm.com/download/win).
 2. Download the **Windows x64** installer (choose **ARM64** only on an ARM-based Windows PC).
 3. Run the installer with default options, keeping the option that makes Git available from the command line / third-party software.
-4. Close and reopen PowerShell (or the Antigravity terminal) and verify:
+4. Close and reopen your terminal (e.g., PowerShell) and verify:
    ```powershell
    git --version
    ```
@@ -55,10 +54,6 @@ Install a **JDK** (not only a JRE) so both `java` and `javac` are available.
    ```
    Confirm the output shows both the Apache Maven version and **Java version 25**.
 
-### 4. Install Google Antigravity
-1. Download and run the Windows installer from [Google Antigravity](https://antigravity.google/) (x64 for Intel/AMD, ARM64 for ARM).
-2. Launch Antigravity and sign in if prompted.
-
 ---
 
 ## Clone the Repository
@@ -71,13 +66,13 @@ Install a **JDK** (not only a JRE) so both `java` and `javac` are available.
    git clone https://github.com/Abysswdh/Testify.git
    cd Testify
    ```
-3. Open the `Testify` folder in Google Antigravity (**File → Open Folder** and select the folder containing `pom.xml`).
+3. Open the `Testify` folder (the folder containing `pom.xml`) in your preferred IDE or code editor.
 
 ---
 
 ## Compile and Run
 
-Open the integrated terminal in Antigravity (**Terminal → New Terminal**) and make sure you are in the project root (where `pom.xml` is located).
+Open a terminal in the project root (the folder where `pom.xml` is located).
 
 ### One-Time Tool Verification
 ```powershell
@@ -156,14 +151,3 @@ git push
 ### Team Rules
 - **Do:** Pull before starting a session, commit small meaningful changes, coordinate which files/features you are editing, and push when ready to share.
 - **Avoid:** Editing the same files simultaneously without coordinating, committing secrets/tokens, committing `target/` or `out/`, or force-pushing shared branches.
-
----
-
-## Troubleshooting
-
-- **`'git'` is not recognized:** Reopen the terminal. If it still fails, reinstall Git with the command-line `PATH` option enabled.
-- **`'java'` or `'javac'` is not recognized:** Reopen the terminal and check that the JDK 25 `bin` folder is on `PATH`. Ensure you installed a **JDK**, not just a JRE.
-- **Maven shows the wrong Java version:** Check `JAVA_HOME` and `PATH` so Maven points to JDK 25, then reopen the terminal.
-- **Maven reports `"No plugin found for prefix javafx"` or build fails:** Do not manually compile with `javac` or randomly change JavaFX versions. Make sure you are in the project root containing `pom.xml`, and share the full error output with the team.
-- **GitHub says repository not found / access denied:** Verify the HTTPS URL and ask the repository owner to grant your GitHub account access.
-- **FXML or controller not found:** Ensure you opened the repository root and did not move or rename files under `src/main`.

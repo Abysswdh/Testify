@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane styleClass="root-pane" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.TestController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="header-bar">
+            <padding>
+                <Insets bottom="16.0" left="24.0" right="24.0" top="16.0" />
+            </padding>
+            <children>
+                <Label styleClass="brand-title" text="Testify" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Label styleClass="header-badge" text="Template Page" />
+            </children>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="18.0">
+            <padding>
+                <Insets bottom="32.0" left="32.0" right="32.0" top="32.0" />
+            </padding>
+            <children>
+                <VBox alignment="CENTER" maxWidth="520.0" spacing="14.0" styleClass="card">
+                    <padding>
+                        <Insets bottom="32.0" left="36.0" right="36.0" top="32.0" />
+                    </padding>
+                    <children>
+                        <Label styleClass="hero-title" text="Testify" />
+                        <Label styleClass="hero-subtitle" text="by Group 8 LD20 OOP" />
+                        <Label styleClass="body-text" text="This is the starter test page template for the Testify JavaFX application. Use this view to verify layout, styling, and controller actions." textAlignment="CENTER" wrapText="true" />
+
+                        <Label fx:id="statusLabel" styleClass="status-label" text="Ready — click the button below to test controller binding." textAlignment="CENTER" wrapText="true" />
+
+                        <HBox alignment="CENTER" spacing="12.0">
+                            <children>
+                                <Button onAction="#handleTestClick" styleClass="primary-button" text="Test Interaction" />
+                                <Button onAction="#openPrimary" styleClass="secondary-button" text="Open Primary View" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" styleClass="footer-bar">
+            <padding>
+                <Insets bottom="12.0" left="24.0" right="24.0" top="12.0" />
+            </padding>
+            <children>
+                <Label styleClass="footer-text" text="Testify • Group 8 LD20 OOP" />
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>
